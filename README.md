@@ -2,6 +2,19 @@
 
 This is a Sublime Text 3 package which purely forced on highlighting both Sass and SCSS syntax as accuracy as possible. Please make sure your Sublime Text 3 version is above Build 3103.
 
+This package has taken over the package name "Sass", please search keyword "sass" from Package Control to install this package.
+
+Known issues:
+
+1. If you updated this package from the [original Sass package](https://github.com/nathos/sass-textmate-bundle) you might notice SCSS files are highlighted with the Sass syntax, to solve this issue, please open any `.scss` file and reset its highlighting syntax with the "Open all with current extension as..." option.
+
+2. If you need the Emmet CSS abbreviation popup window to work well with the Sass syntax, you probably need to add the following code to your Emmet settings file.
+  ``` json
+  {
+      "css_completions_scope": "source.scss - comment - variable - keyword.control - entity.other, source.sass - comment - variable - keyword.control - entity.other",
+  }
+  ```
+
 ## New Features
 
 * Added support for CSS4 variables
@@ -18,8 +31,8 @@ Element      | Scope
 :----------- | :--------------
 Block Comment | `comment.block.css.sass`
 Sass Line Comment | `comment.line.sass`
-CSS4 Variable | `variable.css.sass`
-Sass Variable | `variable.sass`
+CSS4 Variable | `variable.parameter.sass`
+Sass Variable | `variable.parameter.sass`
 At-rule, Sass Directive, Directive Shorthand | `keyword.control.at-rule.css.sass`
 Type Selector, Universal Selector | `entity.name.tag.css.sass`
 Id Selector | `entity.other.attribute-name.id.css.sass`
